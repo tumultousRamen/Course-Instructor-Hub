@@ -4,9 +4,9 @@ from nltk.corpus import stopwords
 from nltk.sentiment import SentimentIntensityAnalyzer
 from typing import Dict, List, Optional, Union
 
-from app.data_loader import DataLoader
-from app.query_processor import QueryProcessor
-from app.config import Config
+from data_loader import DataLoader
+from query_processor import QueryProcessor
+from config import Config
 
 class InstructorHub:
     def __init__(self):

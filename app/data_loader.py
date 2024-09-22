@@ -2,7 +2,7 @@ import pandas as pd
 from pathlib import Path
 from typing import Dict
 
-from app.config import Config
+from config import Config
 
 class DataLoader:
     @staticmethod

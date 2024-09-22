@@ -1,4 +1,4 @@
-from app.instructor_hub import InstructorHub
+from instructor_hub import InstructorHub
 
 def main():
     try:
