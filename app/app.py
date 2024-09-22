@@ -56,28 +56,12 @@ class InstructorHub:
         tokens = word_tokenize(query.lower())
         tokens = [w for w in tokens if w not in self.stop_words]
         
-        # Define more specific keywords for each query type
-        query_keywords = {
-            "enrolled students": ["enrolled", "students", "total"],
-            "completed module": ["completed", "module"],
-            "completed assessment": ["completed", "assessment"],
-            "completed course": ["completed", "course", "entire"],
-            "average score": ["average", "score"],
-            "highest completion rate": ["highest", "completion", "rate"],
-            "top performing students": ["top", "performing", "students"],
-            "overall completion rate": ["overall", "completion", "rate"],
-            "student performance": ["student", "performance", "doing"],
-            "final exam performance": ["final", "exam"],
-            "assessment difficulty": ["difficult", "difficulty", "assessment", "quiz"],
-            "module feedback": ["think", "feedback", "module"],
-            "overall course sentiment": ["overall", "sentiment", "course"]
-        }
-        
         best_match = None
         max_overlap = 0
         
-        for key, keywords in query_keywords.items():
-            overlap = len(set(tokens) & set(keywords))
+        for key in self.predefined_queries.keys():
+            key_tokens = word_tokenize(key.lower())
+            overlap = len(set(tokens) & set(key_tokens))
             if overlap > max_overlap:
                 max_overlap = overlap
                 best_match = key
@@ -86,6 +70,7 @@ class InstructorHub:
             return self.predefined_queries[best_match](query)
         else:
             return "I'm sorry, I don't understand that query. Could you please rephrase it?"
+        
 
     def enrolled_students(self, query):
         return f"Total enrolled students: {len(self.students)}"
