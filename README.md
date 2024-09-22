@@ -68,6 +68,30 @@ Follow the prompts to interact with the Instructor Hub.
 
 The system uses a flexible query matching system that allows for variations in how questions are asked, making the interaction more natural and user-friendly.
 
+### Sample Query and Responses
+
+```
+How many students are enrolled in this course?
+Total enrolled students: 20
+```
+
+```
+ Who are my top performing students?
+Top performing students: Tyler Wong, Mrs. Emily Johnson, Tyler Gallagher, Emily Johnson, Wendy Moore
+```
+
+```
+What's the feedback we received for module 1?
+Feedback for Foundations of Education:
+Average Rating: 2.94/5
+Overall Sentiment: Positive (0.18)
+```
+
+```
+What was the performance in assessment 1?
+Students completed Final Exam: 14
+```
+
 ## Improvements and Expansion
 The projects delivers a basic application that can answer a range of queries concerning a course. Some avenues of improvement could be:
 ### Natural Language Understanding:
